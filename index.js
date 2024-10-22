@@ -14,9 +14,10 @@ const fuel = 5000; // remaining fuel (kg)
 const fbr = 0.5; // fuel burn rate (kg/s)
 
 
-const d2 = d + (vel*(time/3600)) //calcultes new distance
-const rf = fuel - (fbr*time) //calculates remaining fuel
-const vel2 = calcNewVel(vel, acc, time) //calculates new velocity based on acceleration
+const vel2 = calcNewVel(vel, acc, time); //calculates new velocity based on acceleration
+const d2 = d + (vel*(time/3600)); //calcultes new distance
+const rf = fuel - (fbr*time); //calculates remaining fuel
+
 
 // Pick up an error with how the function below is called and make it robust to such errors
 function calcNewVel(vel, acc, time){ 
