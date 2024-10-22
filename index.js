@@ -21,6 +21,15 @@ const rf = fuel - (fbr*time); //calculates remaining fuel
 
 // Pick up an error with how the function below is called and make it robust to such errors
 function calcNewVel(vel, acc, time){ 
+  //throw error if not a number
+  if (typeof vel !== 'number' || typeof acc !== 'number' || typeof time !== 'number') {
+    throw new Error('All inputs must be numbers.');
+    }
+  //throw error if negative value
+  if(vel < 0 || acc < 0 || time < 0){
+    throw new Error('No negative values')
+    }
+
   return vel + ((acc*12960)*(time/3600))
 }
 
